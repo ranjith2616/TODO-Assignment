@@ -1,0 +1,88 @@
+// API 1 GET 
+// Scenario 1
+GET http://localhost:3000/todos/?status=TO%20DO
+
+###
+// Scenario 2
+GET http://localhost:3000/todos/?priority=HIGH
+
+###
+// Scenario 3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+###
+// Scenario 4
+GET http://localhost:3000/todos/?search_q=Buy
+
+###
+// Scenario 5
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+###
+// Scenario 6
+GET http://localhost:3000/todos/?category=HOME
+###
+// Scenario 7
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+###
+// API 2 GET based on todo Id
+GET http://localhost:3000/todos/1/
+
+###
+// API 3 GET something date realted
+GET http://localhost:3000/agenda/?date=2021-2-22
+
+###
+// API 4 POST Create New Todo Item
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+ "id": 20,
+ "todo": "Finalize event theme",
+ "priority": "LOW",
+ "status": "TO DO",
+ "category": "HOME",
+ "dueDate": "2021-2-21"
+}
+
+### 
+// API 5 PUT METHOD 
+// Scenario 1
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{ "status": "DONE" }
+
+###
+// Scenario 2
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{ "priority": "HIGH" }
+###
+// Scenario 3
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{
+"todo": "Clean the garden"
+}
+
+###
+// Scenario 4
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{ "category": "LEARNING" }
+
+###
+// Scenario 5
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{ "dueDate": "2021-01-12" }
+
+###
+// API 6 DELETE
+DELETE  http://localhost:3000/todos/5/
